@@ -40,6 +40,7 @@ public class InstituteController {
     public void deleteInstById(@PathVariable Integer id) {
         instituteService.deleteInstById(id);
        // return "ID: " + id;
+        // Added to git hub
     }
 }
 
