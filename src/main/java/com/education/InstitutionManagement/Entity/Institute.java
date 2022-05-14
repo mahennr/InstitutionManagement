@@ -1,4 +1,4 @@
-package com.education.InstitutionManagement.entity;
+package com.education.InstitutionManagement.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +16,13 @@ public class Institute {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer instituteId;
 
-    @Column(name="institution_name")
+    @Column(name="Institution_Name")
     private String instituteName;
 
     @Column(name="Institute_Location")
-    private String instituteLocation;
+    private String city;
 
-    public Institute(String instituteName, String instituteLocation) {
-    }
+    @OneToOne()
+    private InstituteBranch branch;
+
 }
