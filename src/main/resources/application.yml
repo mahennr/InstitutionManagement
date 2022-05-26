@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/testdb'
+    initialize: true
+    username: postgres
+    password: root
+    continue-on-error: true
+
+  spring:
+    jpa:
+      hibernate:
+        show-sql: true
+        ddl-auto: create
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8081
+
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+    api-docs:
+      groups:
+        enabled: true
+
+
+
+
