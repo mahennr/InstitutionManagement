@@ -11,18 +11,15 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name="Institution")
 public class Institute {
-    @Column(name="Institution_ID")
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "Institute_Id")
     private Integer instituteId;
 
     @Column(name="Institution_Name")
     private String instituteName;
 
-    @Column(name="Institute_Location")
-    private String city;
-
-    @OneToOne()
-    private InstituteBranch branch;
+    @OneToOne(mappedBy = "institute")
+    private InstitutionBranch branch;
 
 }

@@ -1,7 +1,8 @@
 package com.education.InstitutionManagement.Service;
 
+import com.education.InstitutionManagement.Entity.InstitutionBranch;
 import com.education.InstitutionManagement.Repository.BranchRepository;
-import com.education.InstitutionManagement.Entity.InstituteBranch;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,17 +16,17 @@ public class BranchService {
 
     //	get all Institutions info
 
-    public List<InstituteBranch> getAllSubInstitutions() {
+    public List<InstitutionBranch> getAllSubInstitutions() {
         return branchRepository.findAll();
     }
 
     // get Institution branch by Id
-    public Optional<InstituteBranch> getSubInstitutionById(Integer instId) {
+    public Optional<InstitutionBranch> getSubInstitutionById(Integer instId) {
         //find an Institution by id
         return branchRepository.findById(instId);
     }
 
-    public InstituteBranch saveBranch(InstituteBranch b1) {
+    public InstitutionBranch saveBranch(InstitutionBranch b1) {
         return branchRepository.save(b1);
     }
 

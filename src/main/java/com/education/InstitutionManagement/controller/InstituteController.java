@@ -1,9 +1,10 @@
 package com.education.InstitutionManagement.Controller;
 
+import com.education.InstitutionManagement.Entity.InstitutionBranch;
 import com.education.InstitutionManagement.Service.BranchService;
 import com.education.InstitutionManagement.Service.InstituteService;
 import com.education.InstitutionManagement.Entity.Institute;
-import com.education.InstitutionManagement.Entity.InstituteBranch;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,12 +62,12 @@ public class InstituteController {
 /* **************Branch APIs**************************** */
 
        @GetMapping(value="/getAllBranches")
-       public List<InstituteBranch> getAllSubInstitutions(){
+       public List<InstitutionBranch> getAllSubInstitutions(){
            return branchService.getAllSubInstitutions();
        }
 
         @PutMapping(value="branch/updateContactNo")
-        public void updateContactNo(@RequestBody InstituteBranch myBranch) {
+        public void updateContactNo(@RequestBody InstitutionBranch myBranch) {
             branchService.saveBranch(myBranch);
         }
 }
