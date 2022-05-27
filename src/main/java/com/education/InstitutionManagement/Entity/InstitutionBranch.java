@@ -27,7 +27,6 @@ public class InstitutionBranch {
     @Column(name="City")
     private String city;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "Institute_Id")
-    private Institute institute;
+  @OneToOne(fetch = FetchType.LAZY,mappedBy = "institutionBranch")
+   private Institute institute;
 }

@@ -14,20 +14,20 @@ public class BranchService {
     @Autowired
     BranchRepository branchRepository;
 
-    //	get all Institutions info
-
-    public List<InstitutionBranch> getAllSubInstitutions() {
+    //	get all Branches
+    public List<InstitutionBranch> getAllBranches() {
         return branchRepository.findAll();
     }
 
-    // get Institution branch by Id
-    public Optional<InstitutionBranch> getSubInstitutionById(Integer instId) {
-        //find an Institution by id
+    // get Institution branch by Branch Id
+
+
+    public InstitutionBranch saveBranch(InstitutionBranch institutionBranch) {
+        return branchRepository.save(institutionBranch);
+    }
+
+
+    public Optional<InstitutionBranch> getBranchById(Integer instId) {
         return branchRepository.findById(instId);
     }
-
-    public InstitutionBranch saveBranch(InstitutionBranch b1) {
-        return branchRepository.save(b1);
-    }
-
 }

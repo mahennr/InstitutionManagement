@@ -19,7 +19,8 @@ public class Institute {
     @Column(name="Institution_Name")
     private String instituteName;
 
-    @OneToOne(mappedBy = "institute")
-    private InstitutionBranch branch;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name= "Branch_ID")
+   private InstitutionBranch institutionBranch;
 
 }
